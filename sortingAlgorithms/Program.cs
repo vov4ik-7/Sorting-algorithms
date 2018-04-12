@@ -128,6 +128,40 @@ namespace sortingAlgorithms
                 quickSort(arr, i, right);
             }
         }
+        public static void countingSort(int[] array) 
+        {
+            int min = array.Min();
+            int fmin;
+            if (min < 0) {
+                fmin = min / -1;
+            }
+            else if (min > 0) {
+                fmin = -min;
+            }
+            else {
+                fmin = 0;
+            }
+            int max = array.Max();
+
+            //int[] output = new int[array.Length];
+
+            int[] arrIndex = new int[max - min + 1];
+
+            for (int i = 0; i < array.Length; ++i) {
+                arrIndex[array[i] + fmin]++;
+            }
+
+
+            int j = 0;
+            for (int i = 0; i < arrIndex.Length; ++i) {
+                while (arrIndex[i] > 0)
+                {
+                    array[j] = i - fmin;
+                    j++;
+                    arrIndex[i]--;
+                }
+            }
+        }
     }
     class MainClass
     {
