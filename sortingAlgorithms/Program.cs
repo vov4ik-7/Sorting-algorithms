@@ -202,6 +202,21 @@ namespace sortingAlgorithms
             {
                 Console.Write($"{elem} ");
             }
+            
+            Console.WriteLine(">Testing bubble sort");
+            Console.WriteLine("Unordered array:");
+            int[] arr4 = new int[] { -100, 50, 65, 1, 0, 1, 1, 1, 90, 54, 34, -4, 0, 23, -11 };
+            Algorithm.bubbleSort(arr4, arr4.Length);
+            foreach (var elem in arr4) {
+                Console.Write($"{elem} ");
+            }
+            Console.WriteLine("\nOrdered array:");
+            int[] arr5 = new int[] { -98, -4, 0, 1, 1, 1, 9, 34, 67, 87, 87 };
+            Algorithm.bubbleSort(arr5, arr5.Length);
+            foreach (var elem in arr5)
+            {
+                Console.Write($"{elem} ");
+            }
         }
     }
 }
