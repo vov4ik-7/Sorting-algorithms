@@ -1,12 +1,73 @@
 ﻿using System;
 using System.Linq;
 
-//really cool algorithms
-
 namespace sortingAlgorithms
 {
     static class Algorithm
     {
+        public class Tree
+        {
+            public Tree left;
+            public Tree right;
+            public int key;
+
+            public Tree(int _key)
+            {
+                key = _key;
+            }
+
+            public void Insert(Tree tr)
+            {
+                if (tr.key < key)
+                {
+                    if (left != null)
+                    {
+                        left.Insert(tr);
+                    }
+                    else
+                    {
+                        left = tr;
+                    }
+                }
+                else
+                {
+                    if (right != null)
+                    {
+                        right.Insert(tr);
+                    }
+                    else
+                    {
+                        right = tr;
+                    }
+                }
+            }
+
+            public void Traverse(TreeVisitor visitor)
+            {
+                if (left != null)
+                {
+                    left.Traverse(visitor);
+                }
+                visitor.visit(this);
+                if (right != null)
+                {
+                    right.Traverse(visitor);
+                }
+            }
+       }
+       public interface TreeVisitor
+       {
+           void visit(Tree node);
+       }
+
+       class KeyPrinter : TreeVisitor
+       {
+       public void visit(Tree node)
+           {
+                Console.Write(node.key + " ");
+           }
+        }
+        
         public static void selectionSort(int[] arr, int n)
         {
             for (int i = 0; i < n; ++i) {
@@ -20,6 +81,7 @@ namespace sortingAlgorithms
                 }
             }
         }
+        
         public static void insertionSort(int[] array)
         {
             int length = array.Length;
