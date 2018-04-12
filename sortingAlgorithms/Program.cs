@@ -41,6 +41,10 @@ namespace sortingAlgorithms
         public static void Main(string[] args)
         {
             int[] arr = new int[] { -12, 5, 2, 12, 6, 1, 1, 0, 0, 7, 18 };
+            Algorithm.insertionSort(arr);
+            foreach (var elem in arr) {
+                Console.Write($"{elem} ");
+            }
         }
     }
 }
