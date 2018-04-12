@@ -217,6 +217,16 @@ namespace sortingAlgorithms
             {
                 Console.Write($"{elem} ");
             }
+            
+            Console.WriteLine(">Testing binary tree sort");
+            Console.WriteLine("Unordered array:");
+            int[] arr6 = new int[] { -100, 50, 65, 1, 0, 1, 1, 1, 90, 54, 34, -4, 0, 23, -11 };
+            Tree sortTree = new Tree(arr6[0]);
+            for (int i = 1; i < n; ++i)
+            {
+                sortTree.Insert(new Tree(arr6[i]));
+            }
+            sortTree.Traverse(new KeyPrinter());
         }
     }
 }
