@@ -143,14 +143,11 @@ namespace sortingAlgorithms
             }
             int max = array.Max();
 
-            //int[] output = new int[array.Length];
-
             int[] arrIndex = new int[max - min + 1];
 
             for (int i = 0; i < array.Length; ++i) {
                 arrIndex[array[i] + fmin]++;
             }
-
 
             int j = 0;
             for (int i = 0; i < arrIndex.Length; ++i) {
@@ -159,6 +156,21 @@ namespace sortingAlgorithms
                     array[j] = i - fmin;
                     j++;
                     arrIndex[i]--;
+                }
+            }
+        }
+        public static void bubbleSort(int[] a, int n)
+        {
+            for (int j = n - 1; j > 0; --j)
+            {
+                for (int i = 0; i < j; ++i)
+                {
+                    if (a[i] > a[i + 1])
+                    {
+                        int toSwap = a[i];
+                        a[i] = a[i + 1];
+                        a[i + 1] = toSwap;
+                    }
                 }
             }
         }
