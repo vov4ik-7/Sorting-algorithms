@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 
+//really cool algorithms
+
 namespace sortingAlgorithms
 {
     static class Algorithm
