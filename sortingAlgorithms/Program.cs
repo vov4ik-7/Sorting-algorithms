@@ -171,9 +171,17 @@ namespace sortingAlgorithms
     }
     class MainClass
     {
+        static void printArr(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+        }
         public static void Main(string[] args)
         {
-            Console.WriteLine(">Testing insertion sort");
+            /*Console.WriteLine(">Testing insertion sort");
             Console.WriteLine("Unordered array:");
             int[] arr = new int[] { -12, 5, 2, 12, 6, 1, 1, 0, 0, 7, 18 };
             Algorithm.insertionSort(arr);
@@ -226,7 +234,30 @@ namespace sortingAlgorithms
             {
                 sortTree.Insert(new Tree(arr6[i]));
             }
+            sortTree.Traverse(new KeyPrinter());*/
+
+
+            // Tree testing
+            int n;
+            Console.WriteLine("Введіть розмір масиву: ");
+            n = int.Parse(Console.ReadLine());
+            int[] arr = new int[n];
+            Random r = new Random();
+            for (int i = 0; i < n; ++i)
+            {
+                arr[i] = r.Next() % 99 + -49;
+            }
+            Console.WriteLine("Даний масив: ");
+            printArr(arr);
+            Tree sortTree = new Tree(arr[0]);
+            for (int i = 1; i < n; ++i)
+            {
+                sortTree.Insert(new Tree(arr[i]));
+            }
+            Console.WriteLine("Посортований масив: ");
             sortTree.Traverse(new KeyPrinter());
+            Console.WriteLine();
+            Console.ReadKey();
         }
     }
 }
