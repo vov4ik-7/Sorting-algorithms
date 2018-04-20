@@ -101,6 +101,11 @@ namespace sortingAlgorithms
         }
         public static void quickSort (int[] arr, int left, int right) 
         {
+
+
+
+
+
             int i = left, j = right;
             int curr;
             int pivot = arr[(left + right) / 2];
