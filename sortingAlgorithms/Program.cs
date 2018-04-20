@@ -128,6 +128,7 @@ namespace sortingAlgorithms
                 quickSort(arr, i, right);
             }
         }
+        //Done 
         public static void countingSort(int[] array) 
         {
             int min = array.Min();
