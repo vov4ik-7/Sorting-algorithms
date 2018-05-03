@@ -166,6 +166,8 @@ namespace sortingAlgorithms
                 }
             }
         }
+        
+        //I fixed this func
         public static void bubbleSort(int[] a, int n)
         {
             for (int j = n - 1; j > 0; --j)
